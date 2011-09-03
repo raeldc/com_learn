@@ -42,8 +42,6 @@ class JRouterAdministrator extends JRouter
 	    
 	        if(isset($segments[2])) {
 	            $vars['view']   = $segments[2];
-	        } else {
-	            $vars['view']   = $segments[1];
 	        }
 	    }
 	    
