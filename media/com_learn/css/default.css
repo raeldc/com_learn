@@ -1,0 +1,16 @@
+#chapter-box {
+	width: 15%;
+	border-right: 1px solid #e0e0e0;
+	background: #e4e8ed;
+}
+
+#pages-box {
+	width: 25%;
+	border-right: 1px solid #e0e0e0;
+	background: #f3f3f3;
+}
+
+#page-box {
+	width: 60%;
+	padding: 10px 10px 10px 20px;
+}
