@@ -14,3 +14,82 @@
 	width: 60%;
 	padding: 10px 10px 10px 20px;
 }
+
+ul.chapters,
+ul.pages {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+ul.chapters li {
+	padding: 10px 15px;
+	color: #666666;
+}
+
+ul.chapters li a:link {
+	color: #1b2025;	
+}
+
+ul.chapters li a:hover {
+	text-decoration: none;
+}
+
+ul.chapters li:hover {
+	background: #5c6c7d;
+	color: #ebedf1;
+	text-shadow:1px 1px 1px #495563;
+}
+
+ul.chapters .title {
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow: 0px 1px 1px #f3f4f6;
+}
+
+ul.chapters li:hover .title {
+	color: #fff;
+	text-shadow: 0px 1px 1px #798da4;
+}
+
+ul.chapters .description {
+	color: #737e8a;
+}
+
+ul.chapters li:hover .description {
+	color: #fff;
+	text-shadow: none;
+}
+
+ul.pages {
+	margin: 0;
+	padding: 0;
+}
+
+ul.pages li {
+	padding: 10px 15px;
+	color: #303030;
+}
+
+ul.pages li:hover {
+	background: #3875d7;
+	color: #ebedf1;
+}
+
+ul.pages .title {
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow:1px 1px 1px #f3f4f6;
+}
+
+ul.pages li:hover .title {
+	text-shadow: none;
+}
+
+ul.pages .description {
+	color: #6A6A6A;
+}
+
+ul.pages li:hover .description {
+	color: #bec9d7;
+}
