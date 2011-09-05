@@ -1,18 +1,26 @@
-<ul>
+<ul class="chapters">
 	<li>
-		<div class="title">Do it first, understand later</div>
-		<div class="description"></div>
+		<a href="#">
+			<span class="title">Do it first, understand later</span>
+			<span class="description">Chapter 1</span>
+		</a>
 	</li>
 	<li>
-		<div class="title">Understanding KFactory and Class Naming Convention</div>
-		<div class="description"></div>
+		<a href="#">
+			<span class="title">Understanding KFactory and Class Naming Convention</span>
+			<span class="description"></span>
+		</a>
 	</li>
 	<li>
-		<div class="title">Understand Nooku Controller</div>
-		<div class="description"></div>
+		<a href="#">
+			<span class="title">Understand Nooku Controller</span>
+			<span class="description"></span>
+		<a href="#">
 	</li>
 	<li>
-		<div class="title">Views and Templates</div>
-		<div class="description"></div>
+		<a href="#">
+			<span class="title">Views and Templates</span>
+			<span class="description"></span>
+		</a>
 	</li>
 </ul>

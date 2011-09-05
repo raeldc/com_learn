@@ -1,4 +1,5 @@
 <style src="media://com_learn/css/default.css" />
+
 <div id="chapter-box">
 	<?=@template('com://admin/learn.view.chapters.default')?>
 </div>
