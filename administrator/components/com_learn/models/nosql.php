@@ -81,13 +81,12 @@ abstract class ComLearnModelNosql extends KModelAbstract
         // Get the data if it doesn't already exist
         if (!isset($this->_item))
         {
-            $selector  = null;
-                
+            $selector = $this->getTable()->getSelector();
+
             if(!$this->_state->isEmpty())
             {
-                $selector = $this->getTable()->getSelector();
-            
                 $this->_buildSelection($selector);
+                //$this->_buildSelectionLimit($selector);
             }
     
             $this->_item = $this->getTable()->select($selector, KDatabase::FETCH_ROW);
