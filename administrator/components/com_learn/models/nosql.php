@@ -97,22 +97,6 @@ abstract class ComLearnModelNosql extends KModelAbstract
 
     public function getTotal()
     {
-        return 1;
-        // Get the data if it doesn't already exist
-        if (!isset($this->_total))
-        {
-            $selector  = null;
-   
-            if(!$this->_state->isEmpty())
-            {
-                $selector = $this->getTable()->getSelector();
-            
-                $this->_buildSelection($selector);
-            }
-    
-            $this->_total = $this->getTable()->count($selector);
-        }
-
         return $this->_total;
     }
 
