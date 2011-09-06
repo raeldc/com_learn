@@ -1,3 +1,3 @@
 <?php
 
-class ComLearnViewLearnHtml extends ComDefaultViewHtml{}
+class ComLearnViewChaptersHtml extends ComDefaultViewHtml{}
