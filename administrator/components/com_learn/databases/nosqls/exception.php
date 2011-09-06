@@ -1,3 +1,3 @@
 <?php
 
-class ComLearnDatabaseSerializerException extends KDatabaseException{}
+class ComLearnDatabaseNosqlException extends KDatabaseException{}

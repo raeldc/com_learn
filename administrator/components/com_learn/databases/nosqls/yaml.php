@@ -1,22 +1,32 @@
 <?php
 
-class ComLearnDatabaseSerializerYaml extends ComLearnDatabaseSerializerAbstract
+class ComLearnDatabaseNosqlYaml extends ComLearnDatabaseNosqlAbstract
 {
-	public function getDocument()
+	protected function _initialize(KConfig $config)
 	{
-	    if(empty($this->_document))
+		$config->append(array(
+			// sample data
+			'storage_name' => 'chapters',
+		));
+	
+		parent::_initialize($config);
+	}
+
+	public function getStorage()
+	{
+	    if(empty($this->_storage))
 		{
 			try 
 			{
 				KLoader::load('com://admin/learn.library.spyc.spyc');
-				$this->_document = Spyc::YAMLLoadString(parent::getDocument());
+				$this->_storage = Spyc::YAMLLoadString(parent::getStorage());
 			}
 			catch(KException $e)
 			{
-				throw new ComLearnDatabaseSerializerException($e->getMessage());
+				throw new ComLearnDatabaseNosqlException($e->getMessage());
 			}
 		}
 		
-		return $this->_document;
+		return $this->_storage;
 	}
 }
