@@ -124,7 +124,7 @@ abstract class ComLearnDatabaseTableNosql extends KObject implements KObjectIden
             {
                 $data = $this->getRow();
                 if(!empty($result)) {
-                   $data->setData($result, false)->setStatus(KDatabase::STATUS_LOADED);
+					$data->setData($result[0], false)->setStatus(KDatabase::STATUS_LOADED);
                 }
                 break;
             }
