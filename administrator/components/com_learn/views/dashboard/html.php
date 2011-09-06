@@ -11,4 +11,18 @@ class ComLearnViewDashboardHtml extends ComDefaultViewHtml
 
 		parent::_initialize($config);
 	}
+
+	public function display()
+	{
+		$this->assign('chapters', KFactory::get('com://admin/learn.model.chapters')->getList());
+
+		$pages = array();
+		if (!is_null($chapter = $this->getModel()->getState()->chapter)) {
+			$pages = new KConfig(KFactory::get('com://admin/learn.model.chapters')->id($chapter)->getItem()->pages);
+		}
+
+		$this->assign('pages', $pages);
+
+		return parent::display();
+	}
 }

@@ -27,6 +27,11 @@ ul.chapters li {
 	color: #666666;
 }
 
+ul.chapters li span,
+ul.pages li span {
+	display: block;
+}
+
 ul.chapters li a:link {
 	color: #1b2025;	
 }
@@ -37,7 +42,6 @@ ul.chapters li a:hover {
 
 ul.chapters li:hover {
 	background: #5c6c7d;
-	color: #ebedf1;
 	text-shadow:1px 1px 1px #495563;
 }
 
@@ -57,7 +61,7 @@ ul.chapters .description {
 }
 
 ul.chapters li:hover .description {
-	color: #fff;
+	color: #f3f4f6;
 	text-shadow: none;
 }
 
