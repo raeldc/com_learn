@@ -1,9 +1,9 @@
 - id:             C01
-  title:          Do it first understand later
+  title:          QuickStart - Do it First, Understand Later
   description:    See Nooku in action right away!
   pages:
       - id:           C0101
-        title:        Your first "Hello Nooku!"
+        title:        Your first "Hello Nooku!" App
         description:  The bare minimum requirement of displaying text in Nooku using MVC
         
       - id:           C0102
