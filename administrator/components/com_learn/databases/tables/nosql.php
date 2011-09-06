@@ -1,6 +1,6 @@
 <?php
 
-abstract class ComLearnDatabaseNosqlAbstract extends KObject implements KObjectIdentifiable
+abstract class ComLearnDatabaseTableNosql extends KObject implements KObjectIdentifiable
 {
 	protected $_storage_path;
 	protected $_storage_name;
@@ -43,7 +43,7 @@ abstract class ComLearnDatabaseNosqlAbstract extends KObject implements KObjectI
 				$this->_storage = file_get_contents($this->_storage_path);
 			}
 			catch(KException $e){
-				throw new ComLearnDatabaseNosqlException($e->getMessage());
+				throw new ComLearnDatabaseTableException($e->getMessage());
 			}
 		}
 		
@@ -68,12 +68,12 @@ abstract class ComLearnDatabaseNosqlAbstract extends KObject implements KObjectI
 			$this->_storage_path = $path;
 			return $this->_storage_path;
 		}
-		else throw new ComLearnDatabaseNosqlException('Path: '.$path.' is not a valid storage path');
+		else throw new ComLearnDatabaseTableException('Path: '.$path.' is not a valid storage path');
 	}
 
 	public function getSelector()
 	{
-		if (!($this->_selector instanceof ComLearnDatabaseNosqlSelectorDefault))
+		if (!($this->_selector instanceof ComLearnDatabaseTableSelectorDefault))
 		{
 			//Make sure we have a selector identifier
 	        if(!($this->_selector instanceof KIdentifier)) {
@@ -88,12 +88,12 @@ abstract class ComLearnDatabaseNosqlAbstract extends KObject implements KObjectI
 
 	public function setSelector($selector)
 	{
-		if (!($this->_selector instanceof ComLearnDatabaseNosqlSelectorDefault))
+		if (!($this->_selector instanceof ComLearnDatabaseTableSelectorDefault))
 		{
 			if(is_string($selector) && strpos($selector, '.') === false ) 
 		    {
 		        $identifier         = clone $this->_identifier;
-		        $identifier->path   = array('database', 'nosql', 'selector');
+		        $identifier->path   = array('database', 'table', 'selector');
 		        $identifier->name   = $selector;
 		    }
 		    else  $identifier = KFactory::identify($selector);
@@ -109,6 +109,66 @@ abstract class ComLearnDatabaseNosqlAbstract extends KObject implements KObjectI
 
 		return $this;
 	}
+
+	public function select($query = null, $mode = KDatabase::FETCH_ROWSET)
+    {
+    	if (!($query instanceof ComLearnDatabaseTableSelectorDefault)) {
+    		throw new ComLearnDatabaseTableException('Query Builder must be an instance of ComLearnDatabaseTableSelectorDefault');
+    	}
+
+   		$result = $query->find($this->getStorage());
+
+    	switch($mode)
+        {
+            case KDatabase::FETCH_ROW    : 
+            {
+                $data = $this->getRow();
+                if(!empty($result)) {
+                   $data->setData($result, false)->setStatus(KDatabase::STATUS_LOADED);
+                }
+                break;
+            }
+            
+            case KDatabase::FETCH_ROWSET : 
+            {
+                $data = $this->getRowset();
+                if(!empty($result)) {
+                    $data->addData($result, false);
+                }
+                break;
+            }
+        }
+
+        return KConfig::toData($data);
+    }
+
+    public function getRow(array $options = array())
+    {
+        $identifier         = clone $this->_identifier;
+        $identifier->path   = array('database', 'row');
+        $identifier->name   = KInflector::singularize($this->_identifier->name);
+            
+        //The row default options
+        $options['table'] = $this;
+             
+        return KFactory::get($identifier, $options); 
+    }
+
+    public function getRowset(array $options = array())
+    {
+        $identifier         = clone $this->_identifier;
+        $identifier->path   = array('database', 'rowset');
+            
+        //The rowset default options
+        $options['table'] = $this; 
+    
+        return KFactory::get($identifier, $options);
+    }
+
+    public function getDefaults()
+    {
+    	return array();
+    }
 
 	public function getIdentifier()
     {

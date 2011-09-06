@@ -1,6 +1,6 @@
 <?php
 
-class ComLearnDatabaseNosqlYaml extends ComLearnDatabaseNosqlAbstract
+class ComLearnDatabaseTableYaml extends ComLearnDatabaseTableNosql
 {
 	protected function _initialize(KConfig $config)
 	{
@@ -23,7 +23,7 @@ class ComLearnDatabaseNosqlYaml extends ComLearnDatabaseNosqlAbstract
 			}
 			catch(KException $e)
 			{
-				throw new ComLearnDatabaseNosqlException($e->getMessage());
+				throw new ComLearnDatabaseTableException($e->getMessage());
 			}
 		}
 		
