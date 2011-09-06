@@ -1,6 +1,6 @@
 <?php
 
-class ComLearnDatabaseSerialYaml extends KObject implements KObjectIdentifiable
+class ComLearnDatabaseSerializerYaml extends KObject implements KObjectIdentifiable
 {
 	protected $_document_path;
 	protected $_document_name;
@@ -41,7 +41,7 @@ class ComLearnDatabaseSerialYaml extends KObject implements KObjectIdentifiable
 				$this->_document = Spyc::YAMLLoad($this->_document_path);
 			}
 			catch(KException $e){
-				throw new ComLearnDatabaseSerialException($e->getMessage());
+				throw new ComLearnDatabaseSerializerException($e->getMessage());
 			}
 		}
 		
