@@ -2,15 +2,15 @@
   title:          QuickStart - Do it First, Understand Later
   description:    See Nooku in action right away!
   pages:
-      - id:           C0101
+      - id:           01-01
         title:        Your first "Hello Nooku!" App
         description:  The bare minimum requirement of displaying text in Nooku using MVC
         
-      - id:           C0102
+      - id:           01-02
         title:        Change the Default Layout of the View"
         description:  The bare minimum requirement of displaying text in Nooku using MVC
 
-      - id:           C0103
+      - id:           01-03
         title:        Your First List of Records from the Database
         description:  The bare minimum requirement of displaying records from the Database
 
@@ -18,14 +18,14 @@
   title:          Understanding KFactory and Class Naming Convention
   description:    Get a better grasp of how things are done in Nooku
   pages:
-      - id:           C0201
+      - id:           02-01
         title:        Identifiers
         description:  Access objects using Identifiers
         
-      - id:           C0202
+      - id:           02-02
         title:        Class Naming Convention
         description:  Learn the standard naming convention and directory structure of classes
 
-      - id:           C0203
+      - id:           02-03
         title:        Cascading Class Override System
         description:  Nooku objects are layered like an onion.
