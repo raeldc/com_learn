@@ -21,7 +21,7 @@ class ComLearnControllerDashboard extends ComDefaultControllerResource
 			if (!is_null($request->page)) 
 			{
 				$page = explode('-', $request->page);
-				$request->chapter = 'C'.$page[0];
+				$request->chapter = $page[0];
 			}
 		}
 
