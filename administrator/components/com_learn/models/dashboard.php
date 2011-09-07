@@ -7,7 +7,7 @@ class ComLearnModelDashboard extends KModelAbstract
 		parent::__construct($config);
 	
 		$this->_state
-			->insert('chapter', 'cmd', 'C01')
-			->insert('page', 'cmd', '00-00');
+			->insert('chapter', 'cmd', 'C1')
+			->insert('page', 'cmd', 'default');
 	}
 }
