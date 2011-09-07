@@ -1,6 +1,6 @@
 <?php
 
-abstract class ComLearnViewMarkdown extends KViewTemplate
+abstract class ComLearnViewMarkdown extends KViewHtml
 {
     protected function _initialize(KConfig $config)
     {
