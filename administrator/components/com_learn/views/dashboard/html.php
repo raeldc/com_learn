@@ -24,9 +24,6 @@ class ComLearnViewDashboardHtml extends ComDefaultViewHtml
 		$this->assign('chapters', KFactory::get('com://admin/learn.model.chapters')->getList());
 		$this->assign('pages', $pages);
 
-		$this->assign('chapter', $state->chapter);
-		$this->assign('page', $state->page);
-
 		return parent::display();
 	}
 }
