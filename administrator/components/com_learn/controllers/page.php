@@ -2,12 +2,11 @@
 
 class ComLearnControllerPage extends ComDefaultControllerResource
 {
-	protected function _initialize(KConfig $config)
+	public function getRequest()
 	{
-		$config->append(array(
-			'model' => 'pages'
-		));
+		$request = parent::getRequest();
+		$request->layout = $request->page;
 
-		parent::_initialize($config);
+		return $request;
 	}
 }
