@@ -13,7 +13,7 @@ class ComLearnTemplateFilterGistit extends KTemplateFilterAbstract implements KT
 
     public function write(&$text)
     {
-        $text = preg_replace('#<a.*href="http://gist\-it\.appspot\.com/(.*)".*>[sS]cript</a>#iU', '<div class="-script-wrapper"><script src="http://gist-it.appspot.com/$1"></script></div>', $text);
+        $text = preg_replace('#<a.*href="http://gist\-it\.appspot\.com/(.*)".*>[sS]cript</a>#iU', '<div class="-script-wrapper"><script inline src="http://gist-it.appspot.com/$1"></script></div>', $text);
 
         return $this;
     }  
