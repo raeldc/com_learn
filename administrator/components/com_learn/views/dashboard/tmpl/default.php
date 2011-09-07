@@ -9,7 +9,7 @@
 </div>
 
 <div id="page-box">
-	<?=@template('com://admin/learn.view.page.default')?>
+	<?=KFactory::get('com://admin/learn.controller.page')->page($state->page)->display();?>
 </div>
 
 <div id="tips-box">
