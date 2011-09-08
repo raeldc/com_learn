@@ -27,6 +27,14 @@
     margin-bottom: 5px;
 }
 
+.-script-wrapper {
+	max-height: 300px;
+	overflow:auto;
+    -moz-box-shadow: 0 0 5px #36353b;
+    -webkit-box-shadow: 0 0 5px #36353b;
+    box-shadow: 0 0 5px #36353b;
+}
+
 code {
     font-family: "Courier New", Courier, mono;
     font-weight: bold;
