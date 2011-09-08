@@ -17,7 +17,8 @@ var Scrollable = new Class({
 	},
 
 	resize: function(){
-		this.element.setStyle('height', this.element.getParent().getStyle('height'));
+		var height = document.getSize().y - this.element.getPosition(document).y;
+		this.element.setStyle('height', height);
 	}
 });
 
